@@ -21,7 +21,6 @@ public class SofaMovement : MonoBehaviour
     void Start()
     {
         StartCoroutine(AngleChanger());
-
         //StartCoroutine(TestAngleChanger());
     }
     void FixedUpdate()
@@ -57,16 +56,16 @@ public class SofaMovement : MonoBehaviour
     {
         if(ControllerInputValues.leftStickValue != Vector2.zero)
         {
-            transform.position = transform.position + new Vector3(transform.forward.x, 0, transform.forward.z) * Time.deltaTime * ControllerInputValues.leftStickValue.x * _movingSpeed;
-            transform.position = transform.position + new Vector3(transform.right.x, 0, transform.right.z) * Time.deltaTime * ControllerInputValues.leftStickValue.y * _movingSpeed;
+            transform.position = transform.position + new Vector3(transform.forward.x, 0, transform.forward.z) * Time.deltaTime * ControllerInputValues.leftStickValue.y * _movingSpeed;
+            transform.position = transform.position + new Vector3(transform.right.x, 0, transform.right.z) * Time.deltaTime * ControllerInputValues.leftStickValue.x * _movingSpeed;
         }
     }
     void TestMoveInChosenDirection()
     {
         if (movementStick != Vector2.zero)
         {
-            transform.position = transform.position + new Vector3(transform.forward.x,0, transform.forward.z) * Time.deltaTime * movementStick.x * _movingSpeed;
-            transform.position = transform.position + new Vector3(transform.right.x,0, transform.right.z) * Time.deltaTime * movementStick.y * _movingSpeed;
+            transform.position = transform.position + new Vector3(transform.forward.x,0, transform.forward.z) * Time.deltaTime * movementStick.y * _movingSpeed;
+            transform.position = transform.position + new Vector3(transform.right.x,0, transform.right.z) * Time.deltaTime * movementStick.x * _movingSpeed;
         }
     }
     void ChangeHigh()

@@ -10,23 +10,11 @@ public class InputSystemScript : MonoBehaviour
     InputDevice leftController;
     private void Start()
     {
-        List<InputDevice> rightControllerList = new List<InputDevice>();
-        List<InputDevice> leftControllerList = new List<InputDevice>();
-        InputDeviceCharacteristics rightControllerCharacteristics = InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
-        InputDeviceCharacteristics leftControllerCharacteristics = InputDeviceCharacteristics.Left | InputDeviceCharacteristics.Controller;
-        InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristics, rightControllerList);
-        InputDevices.GetDevicesWithCharacteristics(leftControllerCharacteristics, leftControllerList);
-        if(rightControllerList.Count > 0)
-        {
-            rightController = rightControllerList[0];
-        }
-        if(leftControllerList.Count > 0)
-        {
-            leftController = leftControllerList[0];
-        }
+
     }
     private void Update()
     {
+        InitializeDevices();
         leftController.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 leftStickValue);
         leftController.TryGetFeatureValue(CommonUsages.trigger, out float leftTrigger);
         rightController.TryGetFeatureValue(CommonUsages.trigger, out float rightTrigger);
@@ -37,5 +25,24 @@ public class InputSystemScript : MonoBehaviour
         ControllerInputValues.rightTrigger = rightTrigger;
         ControllerInputValues.rightGrip = rightPrimaryButton;
         ControllerInputValues.leftGrip = leftPrimaryButton;
+        Debug.Log(rightController.isValid + " " + leftController.isValid);
+    }
+
+    void InitializeDevice(InputDeviceCharacteristics characteristics, ref InputDevice device)
+    {
+        List<InputDevice> devices = new List<InputDevice>();
+        InputDevices.GetDevicesWithCharacteristics(characteristics, devices);
+        if(devices.Count > 0) { device = devices[0]; }
+    }
+    void InitializeDevices()
+    {
+        if (!rightController.isValid)
+        {
+            InitializeDevice(InputDeviceCharacteristics.Right, ref rightController);
+        }
+        if (!leftController.isValid)
+        {
+            InitializeDevice(InputDeviceCharacteristics.Left, ref leftController);
+        }
     }
 }
