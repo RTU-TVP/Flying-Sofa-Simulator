@@ -20,20 +20,20 @@ public class SofaMovement : MonoBehaviour
     [SerializeField] float goDown;
     void Start()
     {
-        //StartCoroutine(AngleChanger());
+        StartCoroutine(AngleChanger());
 
-        StartCoroutine(TestAngleChanger());
+        //StartCoroutine(TestAngleChanger());
     }
     void FixedUpdate()
     {
-        //RotateInChosenDirection();
-        //MoveInChosenDirection();
-        //ChangeHigh();
+        RotateInChosenDirection();
+        MoveInChosenDirection();
+        ChangeHigh();
 
 
-        TestRotateInChosenDirection();
-        TestMoveInChosenDirection();
-        TestChangeHigh();
+        //TestRotateInChosenDirection();
+        //TestMoveInChosenDirection();
+        //TestChangeHigh();
     }
     void RotateInChosenDirection()
     {
