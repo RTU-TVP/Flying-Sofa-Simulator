@@ -70,10 +70,10 @@ public class SofaMovement : MonoBehaviour
     }
     void ChangeHigh()
     {
-        if(ControllerInputValues.rightGrip != 0 || ControllerInputValues.leftGrip != 0)
+        if(ControllerInputValues.rightStickValue.y != 0)
         {
             Vector3 pos = transform.position;
-            pos.y += (ControllerInputValues.rightGrip - ControllerInputValues.leftGrip) * Time.deltaTime;
+            pos.y += ControllerInputValues.rightStickValue.y * Time.deltaTime;
             transform.position = pos;
         }
     }
@@ -90,7 +90,7 @@ public class SofaMovement : MonoBehaviour
     {
         float x = 0;
         x += ControllerInputValues.leftStickValue.x * 20;
-        x -= (ControllerInputValues.rightGrip - ControllerInputValues.leftGrip) * 10;
+        x -= ControllerInputValues.rightStickValue.y * 10;
         if(x > 30)
         {
             x = 30;

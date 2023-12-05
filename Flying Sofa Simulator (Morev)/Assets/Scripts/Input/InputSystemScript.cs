@@ -16,15 +16,15 @@ public class InputSystemScript : MonoBehaviour
     {
         InitializeDevices();
         leftController.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 leftStickValue);
+        rightController.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 rightStickValue);
         leftController.TryGetFeatureValue(CommonUsages.trigger, out float leftTrigger);
         rightController.TryGetFeatureValue(CommonUsages.trigger, out float rightTrigger);
         rightController.TryGetFeatureValue(CommonUsages.grip,out float rightPrimaryButton);
         leftController.TryGetFeatureValue(CommonUsages.grip, out float leftPrimaryButton);
         ControllerInputValues.leftStickValue = leftStickValue;
+        ControllerInputValues.rightStickValue = rightStickValue;
         ControllerInputValues.leftTrigger = leftTrigger;
         ControllerInputValues.rightTrigger = rightTrigger;
-        ControllerInputValues.rightGrip = rightPrimaryButton;
-        ControllerInputValues.leftGrip = leftPrimaryButton;
         Debug.Log(rightController.isValid + " " + leftController.isValid);
     }
 
