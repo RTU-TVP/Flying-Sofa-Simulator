@@ -25,7 +25,6 @@ public class InputSystemScript : MonoBehaviour
         ControllerInputValues.rightStickValue = rightStickValue;
         ControllerInputValues.leftTrigger = leftTrigger;
         ControllerInputValues.rightTrigger = rightTrigger;
-        Debug.Log(rightController.isValid + " " + leftController.isValid);
     }
 
     void InitializeDevice(InputDeviceCharacteristics characteristics, ref InputDevice device)
