@@ -89,7 +89,7 @@ public class SofaMovement : MonoBehaviour
     float GetXPitch()
     {
         float x = 0;
-        x += ControllerInputValues.leftStickValue.x * 20;
+        x += ControllerInputValues.leftStickValue.y * 20;
         x -= ControllerInputValues.rightStickValue.y * 10;
         if(x > 30)
         {
@@ -104,7 +104,7 @@ public class SofaMovement : MonoBehaviour
     float GetZPitch()
     {
         float z = 0;
-        z -= ControllerInputValues.leftStickValue.y * 20;
+        z -= ControllerInputValues.leftStickValue.x * 20;
         z -= (ControllerInputValues.rightTrigger - ControllerInputValues.leftTrigger) * 10;
         if (z > 30)
         {
