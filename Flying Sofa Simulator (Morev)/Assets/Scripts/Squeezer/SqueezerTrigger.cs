@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SqueezerTrigger : MonoBehaviour
 {
+    [SerializeField] PlayerConfig playerConfig;
     private void OnTriggerStay(Collider other)
     {
         if(other.CompareTag("sofa"))
         {
-            //ubiystva raschlenyonka
-            Destroy(other.gameObject);
+            playerConfig.SetAliveStatus(false);
         }
     }
 }

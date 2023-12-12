@@ -3,7 +3,9 @@ guid: 42b92c8a0a986fb48ba12b8765279f39
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerConfig: {fileID: 11400000, guid: ef9c497222baa4149a574a05686ffa40, type: 2}
+  - _sofaModelObject: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -6,10 +6,6 @@ public class InputSystemScript : MonoBehaviour
 {
     InputDevice rightController;
     InputDevice leftController;
-    private void Start()
-    {
-
-    }
     private void Update()
     {
         InitializeDevices();

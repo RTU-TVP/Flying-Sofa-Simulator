@@ -5,19 +5,31 @@ using UnityEngine;
 
 public class SofaMovement : MonoBehaviour
 {
+    [SerializeField] PlayerConfig playerConfig;
     [SerializeField] GameObject _sofaModelObject;
     [SerializeField] int _movingSpeed;
     [SerializeField] int _rotationSpeed;
     [SerializeField] int _pitchSoftness;
+
+    float velocity = 0;
+    Vector3 currentPos;
+    Vector3 previousPos;
     void Start()
     {
+        playerConfig.SetAliveStatus(true);
+        currentPos = transform.position;
+        previousPos = transform.position;
         StartCoroutine(AngleChanger());
     }
     void FixedUpdate()
     {
-        RotateInChosenDirection();
-        MoveInChosenDirection();
-        ChangeHigh();
+        if(playerConfig.GetAliveStatus())
+        {
+            RotateInChosenDirection();
+            MoveInChosenDirection();
+            ChangeHigh();
+        }
+        SetVelocity();
     }
     void RotateInChosenDirection()
     {
@@ -81,7 +93,14 @@ public class SofaMovement : MonoBehaviour
         Vector2 neededAngles = new Vector2(GetXPitch(), GetZPitch());
         while(true)
         {
-            neededAngles = new Vector2(GetXPitch(), GetZPitch());
+            if (playerConfig.GetAliveStatus())
+            {
+                neededAngles = new Vector2(GetXPitch(), GetZPitch());
+            }
+            else
+            {
+                neededAngles = Vector2.zero;
+            }
             if (currentAngles != neededAngles)
             {
                 currentAngles -= (currentAngles - neededAngles) / _pitchSoftness;
@@ -89,5 +108,11 @@ public class SofaMovement : MonoBehaviour
             _sofaModelObject.transform.localEulerAngles = new Vector3(currentAngles.x, _sofaModelObject.transform.localEulerAngles.y, currentAngles.y);
             yield return null;
         }
+    }
+    void SetVelocity()
+    {
+        previousPos = currentPos;
+        currentPos = transform.position;
+        playerConfig.SetVelocity((currentPos - previousPos).magnitude / Time.fixedDeltaTime);
     }
 }

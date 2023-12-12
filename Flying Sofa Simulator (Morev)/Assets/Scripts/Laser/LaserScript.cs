@@ -7,6 +7,7 @@ public class LaserScript : MonoBehaviour
     LineRenderer _beam;
     Transform _beamStartPos;
     [SerializeField] float _maxLength;
+    [SerializeField] PlayerConfig _playerConfig;
     private void Awake()
     {
         _beam = GetComponent<LineRenderer>();
@@ -35,12 +36,10 @@ public class LaserScript : MonoBehaviour
         Vector3 hitPosition = cast ? hit.point : _beamStartPos.position + _beamStartPos.forward * _maxLength;
         _beam.SetPosition(0, _beamStartPos.position);
         _beam.SetPosition(1, hitPosition);
-
-
-        //did collide with player
-        //if(hit.collider.gameObject)
-        //{
-
-        //}
+        
+        if (hit.collider != null && hit.collider.gameObject.CompareTag("sofa"))
+        {
+            _playerConfig.SetAliveStatus(false);
+        }
     }
 }
