@@ -15,7 +15,6 @@ public class CheckpointsScript : MonoBehaviour
         }
         player = GameObject.FindObjectOfType<SofaMovement>().gameObject;
         _playerConfig.SetNewCheckpoint(PlayerPrefs.GetInt("checkpoint"));
-        Debug.Log(_playerConfig.GetCurrentCheckpoint());
     }
     private void Start()
     {
@@ -25,6 +24,5 @@ public class CheckpointsScript : MonoBehaviour
     {
         player.transform.position = _checkpoints[_playerConfig.GetCurrentCheckpoint()]._respawnPlace.position;
         player.transform.rotation = _checkpoints[_playerConfig.GetCurrentCheckpoint()]._respawnPlace.rotation;
-        player.GetComponent<PlayerLose>().ScreenFadeOut();
     }
 }

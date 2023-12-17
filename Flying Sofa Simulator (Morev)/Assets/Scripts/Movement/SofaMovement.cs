@@ -6,7 +6,6 @@ using UnityEngine;
 public class SofaMovement : MonoBehaviour
 {
     [SerializeField] PlayerConfig playerConfig;
-    [SerializeField] GameObject _sofaModelObject;
     [SerializeField] int _movingSpeed;
     [SerializeField] int _rotationSpeed;
     [SerializeField] int _pitchSoftness;
@@ -105,7 +104,7 @@ public class SofaMovement : MonoBehaviour
             {
                 currentAngles -= (currentAngles - neededAngles) / _pitchSoftness;
             }
-            _sofaModelObject.transform.localEulerAngles = new Vector3(currentAngles.x, _sofaModelObject.transform.localEulerAngles.y, currentAngles.y);
+            transform.localEulerAngles = new Vector3(currentAngles.x, transform.localEulerAngles.y, currentAngles.y);
             yield return null;
         }
     }

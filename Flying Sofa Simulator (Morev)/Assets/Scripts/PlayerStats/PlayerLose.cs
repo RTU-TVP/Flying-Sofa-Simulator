@@ -18,6 +18,10 @@ public class PlayerLose : MonoBehaviour
             loseStarted = true;
         }
     }
+    private void Start()
+    {
+        ScreenFadeOut();
+    }
     public void Lose()
     {
         ScreenFadeIn();
