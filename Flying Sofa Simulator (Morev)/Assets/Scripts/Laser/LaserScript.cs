@@ -28,15 +28,15 @@ public class LaserScript : MonoBehaviour
             if(_beam.enabled) BeamDeactivate();
             else BeamActivate();
         }
-    }
-    private void FixedUpdate()
-    {
+
+
+
         Ray ray = new Ray(_beamStartPos.position, _beamStartPos.forward);
         bool cast = Physics.Raycast(ray, out RaycastHit hit, _maxLength);
         Vector3 hitPosition = cast ? hit.point : _beamStartPos.position + _beamStartPos.forward * _maxLength;
         _beam.SetPosition(0, _beamStartPos.position);
         _beam.SetPosition(1, hitPosition);
-        
+
         if (hit.collider != null && hit.collider.gameObject.CompareTag("sofa"))
         {
             _playerConfig.SetAliveStatus(false);
