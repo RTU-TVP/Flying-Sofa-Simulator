@@ -6,6 +6,7 @@ public class CheckpointTrigger : MonoBehaviour
 {
     [SerializeField] public Transform _respawnPlace;
     [SerializeField] PlayerConfig _playerConfig;
+    [HideInInspector]
     public int checkPointNumber;
 
     private void OnTriggerEnter(Collider other)

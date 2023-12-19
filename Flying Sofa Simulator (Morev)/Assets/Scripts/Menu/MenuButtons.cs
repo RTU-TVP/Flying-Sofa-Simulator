@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuButtons : MonoBehaviour
@@ -183,18 +184,15 @@ public class MenuButtons : MonoBehaviour
 
     void NewGame()
     {
-        Debug.Log("newGame");
         PlayerPrefs.SetInt("checkpoint", 0);
-        //start game scene
+        SceneManager.LoadScene("GameScene");
     }
     void Continue()
     {
-        Debug.Log("continue");
-        //start game scene
+        SceneManager.LoadScene("GameScene");
     }
     void Exit()
     {
-        Debug.Log("exit");
         Application.Quit();
     }
 
