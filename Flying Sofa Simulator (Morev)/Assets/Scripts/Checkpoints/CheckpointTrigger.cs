@@ -15,6 +15,7 @@ public class CheckpointTrigger : MonoBehaviour
         {
             _playerConfig.SetNewCheckpoint(checkPointNumber);
             PlayerPrefs.SetInt("checkpoint", checkPointNumber);
+            Destroy(gameObject);
         }
     }
 }

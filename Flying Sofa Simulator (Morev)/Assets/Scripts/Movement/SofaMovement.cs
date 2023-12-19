@@ -6,11 +6,11 @@ using UnityEngine;
 public class SofaMovement : MonoBehaviour
 {
     [SerializeField] PlayerConfig playerConfig;
-    [SerializeField] int _movingSpeed;
-    [SerializeField] int _rotationSpeed;
+    [SerializeField] float _movingSpeed;
+    [SerializeField] float _rotationSpeed;
     [SerializeField] int _pitchSoftness;
+    [SerializeField] float _deadlyVelocity;
 
-    float velocity = 0;
     Vector3 currentPos;
     Vector3 previousPos;
     void Start()
@@ -113,5 +113,36 @@ public class SofaMovement : MonoBehaviour
         previousPos = currentPos;
         currentPos = transform.position;
         playerConfig.SetVelocity((currentPos - previousPos).magnitude / Time.fixedDeltaTime);
+    }
+
+    public void SetMovementSpeed(float value)
+    {
+        _movingSpeed = value;
+    }
+    public void SoftSetMovementSpeed(float value, float softness)
+    {
+        StartCoroutine(SpeedChanger(value, softness));
+    }
+
+    IEnumerator SpeedChanger(float value, float softness)
+    {
+        while (Mathf.Abs(_movingSpeed - value) > 1)
+        {
+            _movingSpeed += (value - _movingSpeed) / softness;
+            if (Mathf.Abs(_movingSpeed - value) < 1)
+            {
+                _movingSpeed = value;
+                yield break;
+            }
+            yield return null;
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(playerConfig.GetVelocity());
+        if (playerConfig.GetVelocity() > _deadlyVelocity)
+        {
+            playerConfig.SetAliveStatus(false);
+        }
     }
 }
