@@ -47,7 +47,7 @@ public class CheckpointsScript : MonoBehaviour
     {
         for (int i = 0; i < _checkpoints.Count; i++)
         {
-            if ((_checkpoints[i].trigger.checkPointNumber == _playerConfig.GetCurrentCheckpoint()) || (_checkpoints[i].trigger.checkPointNumber == _playerConfig.GetCurrentCheckpoint() + 1))
+            if ((_checkpoints[i].trigger.checkPointNumber == _playerConfig.GetCurrentCheckpoint()) || (_checkpoints[i].trigger.checkPointNumber == _playerConfig.GetCurrentCheckpoint() + 1) || (_checkpoints[i].trigger.checkPointNumber == _playerConfig.GetCurrentCheckpoint() + 2))
             {
                 _checkpoints[i].location.SetActive(true);
             }

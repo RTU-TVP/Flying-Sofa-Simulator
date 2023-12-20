@@ -52,7 +52,7 @@ public class SofaMovement : MonoBehaviour
         if(ControllerInputValues.rightStickValue.y != 0)
         {
             Vector3 pos = transform.position;
-            pos.y += ControllerInputValues.rightStickValue.y * Time.deltaTime;
+            pos.y += ControllerInputValues.rightStickValue.y * Time.deltaTime * _movingSpeed * 0.5f;
             transform.position = pos;
         }
     }
