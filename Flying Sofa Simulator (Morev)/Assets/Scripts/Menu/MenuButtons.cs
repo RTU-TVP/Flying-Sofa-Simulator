@@ -15,6 +15,8 @@ public class MenuButtons : MonoBehaviour
     [SerializeField] Image _continue;
     [SerializeField] Image _exit;
 
+    AudioManager audio;
+
     [Range(-1f, 1f)]
     [SerializeField] float testControllerValue = 0;
     [Range(0f, 1f)]
@@ -27,14 +29,16 @@ public class MenuButtons : MonoBehaviour
 
     private void Start()
     {
+        audio = GetComponent<AudioManager>();
         StartCoroutine(TestTurnOnSwitchButtons(0.5f));
+        //StartCoroutine(TurnOnSwitchButtons(0.5f));
     }
     private void Update()
     {
-        //TestButtonsSwitch();
-        //TestPushButton();
-        ButtonsSwitch();
-        PushButton();
+        TestButtonsSwitch();
+        TestPushButton();
+        //ButtonsSwitch();
+        //PushButton();
     }
 
     void TestButtonsSwitch()
@@ -80,6 +84,7 @@ public class MenuButtons : MonoBehaviour
         if(currentButton > 1)
         {
             currentButton--;
+            audio.Play($"b{currentButton}");
         }
         areButtonsSwitchable = false;
     }
@@ -88,6 +93,7 @@ public class MenuButtons : MonoBehaviour
         if(currentButton < 3)
         {
             currentButton++;
+            audio.Play($"b{currentButton}");
         }
         areButtonsSwitchable = false;
     }
@@ -145,33 +151,33 @@ public class MenuButtons : MonoBehaviour
         switch (index)
         {
             case 1:
-                //StartCoroutine(ColorChanger(_chosenColor, _newGame, 0.3f));
-                //StartCoroutine(ColorChanger(_baseColor, _continue, 0.3f));
-                //StartCoroutine(ColorChanger(_baseColor, _exit, 0.3f));
+                StartCoroutine(ColorChanger(_chosenColor, _newGame, 0.3f));
+                StartCoroutine(ColorChanger(_baseColor, _continue, 0.3f));
+                StartCoroutine(ColorChanger(_baseColor, _exit, 0.3f));
 
-                _newGame.color = _chosenColor;
-                _continue.color = _baseColor;
-                _exit.color = _baseColor;
+                //_newGame.color = _chosenColor;
+                //_continue.color = _baseColor;
+                //_exit.color = _baseColor;
                 currentButtonAction = NewGame;
                 break;
             case 2:
-                //StartCoroutine(ColorChanger(_chosenColor, _continue, 0.3f));
-                //StartCoroutine(ColorChanger(_baseColor, _newGame, 0.3f));
-                //StartCoroutine(ColorChanger(_baseColor, _exit, 0.3f));
+                StartCoroutine(ColorChanger(_chosenColor, _continue, 0.3f));
+                StartCoroutine(ColorChanger(_baseColor, _newGame, 0.3f));
+                StartCoroutine(ColorChanger(_baseColor, _exit, 0.3f));
 
-                _newGame.color = _baseColor;
-                _continue.color = _chosenColor;
-                _exit.color = _baseColor;
+                //_newGame.color = _baseColor;
+                //_continue.color = _chosenColor;
+                //_exit.color = _baseColor;
                 currentButtonAction = Continue;
                 break;
             case 3:
-                //StartCoroutine(ColorChanger(_chosenColor, _exit, 0.3f));
-                //StartCoroutine(ColorChanger(_baseColor, _newGame, 0.3f));
-                //StartCoroutine(ColorChanger(_baseColor, _continue, 0.3f));
+                StartCoroutine(ColorChanger(_chosenColor, _exit, 0.3f));
+                StartCoroutine(ColorChanger(_baseColor, _newGame, 0.3f));
+                StartCoroutine(ColorChanger(_baseColor, _continue, 0.3f));
 
-                _newGame.color = _baseColor;
-                _continue.color = _baseColor;
-                _exit.color = _chosenColor;
+                //_newGame.color = _baseColor;
+                //_continue.color = _baseColor;
+                //_exit.color = _chosenColor;
                 currentButtonAction = Exit;
                 break;
             default:

@@ -740,6 +740,7 @@ GameObject:
   - component: {fileID: 1138647764}
   - component: {fileID: 1138647769}
   - component: {fileID: 1138647770}
+  - component: {fileID: 1138647771}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -882,6 +883,41 @@ MonoBehaviour:
   _continue: {fileID: 1537432944}
   _exit: {fileID: 1237824902}
   testControllerValue: 0
+  testButton: 0
+--- !u!114 &1138647771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138647763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3753e0cc2fc2e7439a0713768dcc702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: b1
+    clip: {fileID: 8300000, guid: 5fa186eb9f0fae0448f1f5fe0efbba16, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: b2
+    clip: {fileID: 8300000, guid: 4a2cc12454b20d441bc83f4745f31af2, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: b3
+    clip: {fileID: 8300000, guid: 93488141206c06841a9a8e9acb5d0bdd, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    source: {fileID: 0}
 --- !u!1 &1189095954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,10 +1893,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerConfig: {fileID: 11400000, guid: ef9c497222baa4149a574a05686ffa40, type: 2}
-  _sofaModelObject: {fileID: 4238120245411712673}
   _movingSpeed: 6
   _rotationSpeed: 25
   _pitchSoftness: 100
+  _deadlyVelocity: 0
+  goForward: 0
+  goSideways: 0
 --- !u!1 &1406887200593540250
 GameObject:
   m_ObjectHideFlags: 0

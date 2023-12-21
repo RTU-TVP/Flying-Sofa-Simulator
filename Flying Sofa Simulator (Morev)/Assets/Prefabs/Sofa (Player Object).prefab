@@ -588,6 +588,7 @@ GameObject:
   - component: {fileID: 2627975739766606447}
   - component: {fileID: 8202042898174262238}
   - component: {fileID: 2719815703172529746}
+  - component: {fileID: 8767287813196946137}
   m_Layer: 0
   m_Name: Sofa (Player Object)
   m_TagString: sofa
@@ -630,6 +631,8 @@ MonoBehaviour:
   _rotationSpeed: 25
   _pitchSoftness: 10
   _deadlyVelocity: 15
+  goForward: 0
+  goSideways: 0
 --- !u!114 &4324278731150227722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,6 +707,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.3, y: 1.5, z: 1}
   m_Center: {x: 0, y: 0.168, z: 0}
+--- !u!114 &8767287813196946137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6464166875999744952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3753e0cc2fc2e7439a0713768dcc702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: SofaMovement
+    clip: {fileID: 8300000, guid: 55726bbbe95d0ff43b4c5468a72cc147, type: 3}
+    volume: 0.4
+    pitch: 0.1
+    loop: 1
+    spatialBlend: 0
+    source: {fileID: 0}
 --- !u!1 &6795901673759451382
 GameObject:
   m_ObjectHideFlags: 0

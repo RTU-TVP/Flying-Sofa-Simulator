@@ -11,13 +11,21 @@ public class SofaMovement : MonoBehaviour
     [SerializeField] int _pitchSoftness;
     [SerializeField] float _deadlyVelocity;
 
+    [Range(-1,1)]
+    [SerializeField] float goForward;
+    [Range(-1, 1)]
+    [SerializeField] float goSideways;
+
     Vector3 currentPos;
     Vector3 previousPos;
+    AudioManager audio;
     void Start()
     {
         playerConfig.SetAliveStatus(true);
         currentPos = transform.position;
         previousPos = transform.position;
+        audio = GetComponent<AudioManager>();
+        audio.Play("SofaMovement");
         StartCoroutine(AngleChanger());
     }
     void FixedUpdate()
@@ -27,8 +35,10 @@ public class SofaMovement : MonoBehaviour
             RotateInChosenDirection();
             MoveInChosenDirection();
             ChangeHigh();
+            TestMove();
         }
         SetVelocity();
+        SetMovementSoundPitch();
     }
     void RotateInChosenDirection()
     {
@@ -45,6 +55,14 @@ public class SofaMovement : MonoBehaviour
         {
             transform.position = transform.position + new Vector3(transform.forward.x, 0, transform.forward.z) * Time.deltaTime * ControllerInputValues.leftStickValue.y * _movingSpeed;
             transform.position = transform.position + new Vector3(transform.right.x, 0, transform.right.z) * Time.deltaTime * ControllerInputValues.leftStickValue.x * _movingSpeed;
+        }
+    }
+    void TestMove()
+    {
+        if ((goForward != 0) || (goSideways != 0))
+        {
+            transform.position = transform.position + new Vector3(transform.forward.x, 0, transform.forward.z) * Time.deltaTime * goForward * _movingSpeed;
+            transform.position = transform.position + new Vector3(transform.right.x, 0, transform.right.z) * Time.deltaTime * goSideways * _movingSpeed;
         }
     }
     void ChangeHigh()
@@ -143,6 +161,18 @@ public class SofaMovement : MonoBehaviour
         if (playerConfig.GetVelocity() > _deadlyVelocity)
         {
             playerConfig.SetAliveStatus(false);
+        }
+    }
+
+    void SetMovementSoundPitch()
+    {
+        if((playerConfig.GetVelocity() / 6) < 0.1f)
+        {
+            audio.SetPitch("SofaMovement", 0.1f);
+        }
+        else
+        {
+            audio.SetPitch("SofaMovement", (playerConfig.GetVelocity() / 6));
         }
     }
 }
