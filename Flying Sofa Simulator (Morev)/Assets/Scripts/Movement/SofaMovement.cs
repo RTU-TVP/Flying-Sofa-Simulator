@@ -157,7 +157,6 @@ public class SofaMovement : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(playerConfig.GetVelocity());
         if (playerConfig.GetVelocity() > _deadlyVelocity)
         {
             playerConfig.SetAliveStatus(false);
@@ -166,13 +165,14 @@ public class SofaMovement : MonoBehaviour
 
     void SetMovementSoundPitch()
     {
-        if((playerConfig.GetVelocity() / 6) < 0.1f)
+        if(Mathf.Sqrt(playerConfig.GetVelocity() / 6) < 0.1f)
         {
             audio.SetPitch("SofaMovement", 0.1f);
         }
         else
         {
-            audio.SetPitch("SofaMovement", (playerConfig.GetVelocity() / 6));
+            
+            audio.SetPitch("SofaMovement", Mathf.Sqrt(playerConfig.GetVelocity() / 6));
         }
     }
 }

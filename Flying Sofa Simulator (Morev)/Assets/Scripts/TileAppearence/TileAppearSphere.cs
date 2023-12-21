@@ -10,6 +10,9 @@ public class TileAppearSphere : MonoBehaviour
         if (other.TryGetComponent<GrowTileSphereTrigger>(out GrowTileSphereTrigger trigger))
         {
             startGrowing = true;
+            DestroyAllSphereTriggers();
+            FindObjectOfType<SofaMovement>().GetComponent<AudioManager>().Play("voice6");
+            FindObjectOfType<LevelFinisher>().FinishLevel(30);
             StartCoroutine(SphereStoper());
             Destroy(trigger.gameObject);
         }
@@ -27,7 +30,13 @@ public class TileAppearSphere : MonoBehaviour
         }
     }
 
-
+    void DestroyAllSphereTriggers()
+    {
+        foreach(GrowTileSphereTrigger trigger in FindObjectsOfType<GrowTileSphereTrigger>())
+        {
+            Destroy(trigger.gameObject);
+        }
+    }
     IEnumerator SphereStoper()
     {
         yield return new WaitForSeconds(10);

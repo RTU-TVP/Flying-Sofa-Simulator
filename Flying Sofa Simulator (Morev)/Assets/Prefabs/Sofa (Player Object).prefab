@@ -589,6 +589,7 @@ GameObject:
   - component: {fileID: 8202042898174262238}
   - component: {fileID: 2719815703172529746}
   - component: {fileID: 8767287813196946137}
+  - component: {fileID: 1434357454320405081}
   m_Layer: 0
   m_Name: Sofa (Player Object)
   m_TagString: sofa
@@ -667,9 +668,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6464166875999744952}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 1
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -685,7 +686,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &2719815703172529746
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -727,6 +728,32 @@ MonoBehaviour:
     loop: 1
     spatialBlend: 0
     source: {fileID: 0}
+  - name: voice5.1
+    clip: {fileID: 8300000, guid: 6aafc85255cb5534ab8098722629c8a1, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: voice6
+    clip: {fileID: 8300000, guid: 85629374924147247a7f01678cb0a2ec, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    source: {fileID: 0}
+--- !u!114 &1434357454320405081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6464166875999744952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88a089eebb372b40bbbaa9035df3bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6795901673759451382
 GameObject:
   m_ObjectHideFlags: 0

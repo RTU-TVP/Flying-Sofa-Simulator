@@ -1910,6 +1910,8 @@ GameObject:
   - component: {fileID: 8066285679681565990}
   - component: {fileID: 1243074888136406643}
   - component: {fileID: 8516867003474525736}
+  - component: {fileID: 8516867003474525737}
+  - component: {fileID: 8516867003474525738}
   m_Layer: 0
   m_Name: Sofa (Player Object)
   m_TagString: Untagged
@@ -3235,6 +3237,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerConfig: {fileID: 11400000, guid: ef9c497222baa4149a574a05686ffa40, type: 2}
   _blackScreen: {fileID: 5190068263977590689}
+--- !u!114 &8516867003474525737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406887200593540250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3753e0cc2fc2e7439a0713768dcc702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: menu
+    clip: {fileID: 8300000, guid: f93dee44bfdaf3e4ba241784f5a07b46, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 1
+    spatialBlend: 1
+    source: {fileID: 0}
+--- !u!114 &8516867003474525738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406887200593540250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397da12e400e7434bb1832e189bb6266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sound: menu
 --- !u!114 &8877941951740949926
 MonoBehaviour:
   m_ObjectHideFlags: 0

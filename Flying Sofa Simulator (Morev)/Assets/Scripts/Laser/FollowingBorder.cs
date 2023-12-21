@@ -9,10 +9,10 @@ public class FollowingBorder : MonoBehaviour
     [SerializeField] float time;
     float rotateSpeed = 0;
     public bool testStart = false;
-    void StartMoving()
+    public void StartMoving()
     {
         StartCoroutine(RotateSpeedUp(10));
-        transform.DOLocalMove(new Vector3(15880, transform.localPosition.y, transform.localPosition.z),time).SetEase(Ease.InCubic);
+        transform.DOLocalMove(new Vector3(4813, transform.localPosition.y, transform.localPosition.z),time).SetEase(Ease.InCubic);
     }
     private void FixedUpdate()
     {
