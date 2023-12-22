@@ -30,13 +30,13 @@ public class MenuButtons : MonoBehaviour
     private void Start()
     {
         audio = GetComponent<AudioManager>();
-        StartCoroutine(TestTurnOnSwitchButtons(0.5f));
+        //StartCoroutine(TestTurnOnSwitchButtons(0.5f));
         StartCoroutine(TurnOnSwitchButtons(0.5f));
     }
     private void Update()
     {
-        TestButtonsSwitch();
-        TestPushButton();
+        //TestButtonsSwitch();
+        //TestPushButton();
         ButtonsSwitch();
         PushButton();
     }
@@ -154,30 +154,18 @@ public class MenuButtons : MonoBehaviour
                 StartCoroutine(ColorChanger(_chosenColor, _newGame, 0.3f));
                 StartCoroutine(ColorChanger(_baseColor, _continue, 0.3f));
                 StartCoroutine(ColorChanger(_baseColor, _exit, 0.3f));
-
-                //_newGame.color = _chosenColor;
-                //_continue.color = _baseColor;
-                //_exit.color = _baseColor;
                 currentButtonAction = NewGame;
                 break;
             case 2:
                 StartCoroutine(ColorChanger(_chosenColor, _continue, 0.3f));
                 StartCoroutine(ColorChanger(_baseColor, _newGame, 0.3f));
                 StartCoroutine(ColorChanger(_baseColor, _exit, 0.3f));
-
-                //_newGame.color = _baseColor;
-                //_continue.color = _chosenColor;
-                //_exit.color = _baseColor;
                 currentButtonAction = Continue;
                 break;
             case 3:
                 StartCoroutine(ColorChanger(_chosenColor, _exit, 0.3f));
                 StartCoroutine(ColorChanger(_baseColor, _newGame, 0.3f));
                 StartCoroutine(ColorChanger(_baseColor, _continue, 0.3f));
-
-                //_newGame.color = _baseColor;
-                //_continue.color = _baseColor;
-                //_exit.color = _chosenColor;
                 currentButtonAction = Exit;
                 break;
             default:

@@ -8,7 +8,6 @@ public class PlayerConfig : ScriptableObject
     bool isAlive;
     float velocity;
     int currentCheckpoint;
-
     public bool GetAliveStatus()
     {
         return isAlive;

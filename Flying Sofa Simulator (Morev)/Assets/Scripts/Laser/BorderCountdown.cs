@@ -13,8 +13,6 @@ public class BorderCountdown : MonoBehaviour
             StartCoroutine(counter(_time));
         }
     }
-
-
     IEnumerator counter(float time)
     {
         yield return new WaitForSeconds(time);

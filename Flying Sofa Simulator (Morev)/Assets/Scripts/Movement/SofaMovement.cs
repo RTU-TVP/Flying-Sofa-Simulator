@@ -160,7 +160,6 @@ public class SofaMovement : MonoBehaviour
             playerConfig.SetAliveStatus(false);
         }
     }
-
     void SetMovementSoundPitch()
     {
         if(Mathf.Sqrt(playerConfig.GetVelocity() / 6) < 0.1f)

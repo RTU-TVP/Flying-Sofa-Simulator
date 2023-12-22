@@ -26,15 +26,12 @@ public class PlayerLose : MonoBehaviour
         ScreenFadeIn();
         StartCoroutine(WaitOnLose(2));
     }
-
-
     IEnumerator WaitOnLose(float time)
     {
         yield return new WaitForSeconds(time);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         yield break;
     }
-
     public void ScreenFadeIn()
     {
         _blackScreen.GetComponent<Image>().DOFade(1, 0.2f);

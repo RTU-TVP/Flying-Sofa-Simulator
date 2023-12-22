@@ -16,7 +16,6 @@ public class AppearDestroyTrigger : MonoBehaviour
             StartCoroutine(Timer(_timer));
         }
     }
-
     IEnumerator Timer(float time)
     {
         yield return new WaitForSeconds(time);

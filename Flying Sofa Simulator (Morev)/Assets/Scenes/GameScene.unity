@@ -263,6 +263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallWithDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 3931947788121717365, guid: 9e13b9f6110dbba49b52072c24ec6997, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6050104279357740531, guid: 9e13b9f6110dbba49b52072c24ec6997, type: 3}
       propertyPath: m_LocalPosition.x
       value: 24.433533
@@ -305,6 +309,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6858404879632168747, guid: 9e13b9f6110dbba49b52072c24ec6997, type: 3}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949862053448055124, guid: 9e13b9f6110dbba49b52072c24ec6997, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
