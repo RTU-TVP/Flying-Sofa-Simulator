@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4972167997025879799}
   - component: {fileID: 8540706995159031733}
   - component: {fileID: 8443650965512094217}
+  - component: {fileID: 7906538742048046043}
   m_Layer: 0
   m_Name: Sci Fi Gates
   m_TagString: Untagged
@@ -72,6 +73,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5, y: 3, z: 5}
   m_Center: {x: -1.5, y: 0.33, z: -0.81}
+--- !u!114 &7906538742048046043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4972167997025983191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3753e0cc2fc2e7439a0713768dcc702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: open
+    clip: {fileID: 8300000, guid: 49bbd564b1e8d0f428867093d0370352, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: close
+    clip: {fileID: 8300000, guid: f4a94c08e9961ea43bfded9f6449d226, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    source: {fileID: 0}
 --- !u!1 &4972167997025983193
 GameObject:
   m_ObjectHideFlags: 0

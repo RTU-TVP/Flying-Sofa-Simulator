@@ -35,11 +35,13 @@ public class MechanicDoor : MonoBehaviour
     {
         _doorLeft.DOLocalMove(_leftDoorOpenPosition, 1f);
         _doorRight.DOLocalMove(_rightDoorOpenPosition, 1f);
+        GetComponent<AudioManager>().Play("open");
     }
     void Close()
     {
         _doorLeft.DOLocalMove(_leftDoorStartPosition, 1f);
         _doorRight.DOLocalMove(_rightDoorStartPosition, 1f);
+        GetComponent<AudioManager>().Play("close");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -60,5 +62,6 @@ public class MechanicDoor : MonoBehaviour
     public void OffDoorTrigger()
     {
         GetComponent<BoxCollider>().enabled = false;
+        isColliderOff = true;
     }
 }

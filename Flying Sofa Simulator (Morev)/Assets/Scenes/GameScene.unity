@@ -2222,6 +2222,34 @@ PrefabInstance:
       value: Sofa (Player Object)
       objectReference: {fileID: 0}
     - target: {fileID: 8767287813196946137, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
+      propertyPath: sounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ea42f41d0caa7a34eaed54bf78e3e699, type: 3}
+    - target: {fileID: 8767287813196946137, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d3deb849b49141a418c9283c77d7eb64, type: 3}
+    - target: {fileID: 8767287813196946137, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 04043824e9045194c842099614567070, type: 3}
+    - target: {fileID: 8767287813196946137, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
+      propertyPath: sounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a2a8b253f62fb945a889a08b430b1a4, type: 3}
+    - target: {fileID: 8767287813196946137, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
+      propertyPath: sounds.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 579fb1ffbd71e9645bb82b664a1db9dc, type: 3}
+    - target: {fileID: 8767287813196946137, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
+      propertyPath: sounds.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: c03b5c06c52bcea48b9c5426c210f2f4, type: 3}
+    - target: {fileID: 8767287813196946137, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
+      propertyPath: sounds.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2954e30b89c3b6741b1f154fbcca28d3, type: 3}
+    - target: {fileID: 8767287813196946137, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
       propertyPath: sounds.Array.data[4].spatialBlend
       value: 1
       objectReference: {fileID: 0}
@@ -48630,7 +48658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: voice1
-    clip: {fileID: 8300000, guid: a1efb777fcb7f6a4b81e845209db6f42, type: 3}
+    clip: {fileID: 8300000, guid: a7dff988514461943bc8e93e99e44a03, type: 3}
     volume: 1
     pitch: 1
     loop: 0
