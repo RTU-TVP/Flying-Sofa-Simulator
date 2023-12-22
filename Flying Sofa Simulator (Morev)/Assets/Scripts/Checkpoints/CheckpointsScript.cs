@@ -16,9 +16,6 @@ public class CheckpointsScript : MonoBehaviour
         }
         player = GameObject.FindObjectOfType<SofaMovement>().gameObject;
         _playerConfig.SetNewCheckpoint(PlayerPrefs.GetInt("checkpoint"));
-    }
-    private void Start()
-    {
         Respawn();
     }
     void Respawn()
