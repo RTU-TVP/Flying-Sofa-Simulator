@@ -723,10 +723,10 @@ MonoBehaviour:
   sounds:
   - name: SofaMovement
     clip: {fileID: 8300000, guid: 55726bbbe95d0ff43b4c5468a72cc147, type: 3}
-    volume: 0.4
+    volume: 1
     pitch: 0.1
     loop: 1
-    spatialBlend: 0
+    spatialBlend: 1
     source: {fileID: 0}
   - name: voice5.1
     clip: {fileID: 8300000, guid: 6aafc85255cb5534ab8098722629c8a1, type: 3}
@@ -738,6 +738,34 @@ MonoBehaviour:
   - name: voice6
     clip: {fileID: 8300000, guid: 85629374924147247a7f01678cb0a2ec, type: 3}
     volume: 0.5
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: voice2
+    clip: {fileID: 8300000, guid: c65599e0cdf525640b9ea45a295b37c7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: voice3
+    clip: {fileID: 8300000, guid: d06a4a5dd9d5b4b409f6833dc57bddd3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: voice4
+    clip: {fileID: 8300000, guid: f00b1d296d92e0a4fb0ee0a36bae3b9a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: voice5
+    clip: {fileID: 8300000, guid: a53f61a6c88062a46aba86cf9689b1d4, type: 3}
+    volume: 1
     pitch: 1
     loop: 0
     spatialBlend: 0

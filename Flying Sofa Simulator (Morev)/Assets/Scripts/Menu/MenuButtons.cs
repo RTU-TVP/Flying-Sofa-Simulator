@@ -31,14 +31,14 @@ public class MenuButtons : MonoBehaviour
     {
         audio = GetComponent<AudioManager>();
         StartCoroutine(TestTurnOnSwitchButtons(0.5f));
-        //StartCoroutine(TurnOnSwitchButtons(0.5f));
+        StartCoroutine(TurnOnSwitchButtons(0.5f));
     }
     private void Update()
     {
         TestButtonsSwitch();
         TestPushButton();
-        //ButtonsSwitch();
-        //PushButton();
+        ButtonsSwitch();
+        PushButton();
     }
 
     void TestButtonsSwitch()
