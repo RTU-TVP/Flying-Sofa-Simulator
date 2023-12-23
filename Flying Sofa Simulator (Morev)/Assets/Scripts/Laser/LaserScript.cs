@@ -12,6 +12,7 @@ public class LaserScript : MonoBehaviour
     {
         _beam = GetComponent<LineRenderer>();
         _beamStartPos = transform;
+
     }
     public void BeamActivate()
     {
@@ -37,9 +38,10 @@ public class LaserScript : MonoBehaviour
         _beam.SetPosition(0, _beamStartPos.position);
         _beam.SetPosition(1, hitPosition);
 
-        if (hit.collider != null && hit.collider.gameObject.CompareTag("sofa"))
+        if (hit.collider != null && hit.collider.gameObject.CompareTag("sofa") && _playerConfig.GetAliveStatus())
         {
             _playerConfig.SetAliveStatus(false);
+            FindObjectOfType<SofaMovement>().GetComponent<AudioManager>().Play("laserDeath");
         }
     }
 }

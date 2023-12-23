@@ -35,8 +35,8 @@ public class MenuButtons : MonoBehaviour
     }
     private void Update()
     {
-        //TestButtonsSwitch();
-        //TestPushButton();
+        TestButtonsSwitch();
+        TestPushButton();
         ButtonsSwitch();
         PushButton();
     }

@@ -193,6 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8203153174100854990}
   - component: {fileID: 6600287535922206693}
+  - component: {fileID: 6380806655967940713}
   m_Layer: 0
   m_Name: Squeezer
   m_TagString: Untagged
@@ -239,6 +240,40 @@ MonoBehaviour:
   _antiSqueezeTime: 2
   _afterSqueezeRest: 0.2
   _beforeSqueezeRest: 1
+--- !u!114 &6380806655967940713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295943854222229426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3753e0cc2fc2e7439a0713768dcc702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: hit
+    clip: {fileID: 8300000, guid: 441640026bc5944488cf6b49b9ef00a2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    source: {fileID: 0}
+  - name: squeeze
+    clip: {fileID: 8300000, guid: 3add1b215fa92fd43bb66dee5319d92f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    source: {fileID: 0}
+  - name: anti
+    clip: {fileID: 8300000, guid: 27f551b3bdef2ee4ab9388cbb9d90d1c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    source: {fileID: 0}
 --- !u!1 &892864365015585990
 GameObject:
   m_ObjectHideFlags: 0

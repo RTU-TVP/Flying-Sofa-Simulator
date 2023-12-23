@@ -34,7 +34,7 @@ public class PlayerLose : MonoBehaviour
     }
     public void ScreenFadeIn()
     {
-        _blackScreen.GetComponent<Image>().DOFade(1, 0.2f);
+        _blackScreen.GetComponent<Image>().DOFade(1, 0.1f);
     }
     public void ScreenFadeOut()
     {

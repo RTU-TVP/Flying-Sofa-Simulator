@@ -12,12 +12,12 @@ public class InputSystemScript : MonoBehaviour
         rightController.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 rightStickValue);
         leftController.TryGetFeatureValue(CommonUsages.trigger, out float leftTrigger);
         rightController.TryGetFeatureValue(CommonUsages.trigger, out float rightTrigger);
-        rightController.TryGetFeatureValue(CommonUsages.grip,out float rightPrimaryButton);
-        leftController.TryGetFeatureValue(CommonUsages.grip, out float leftPrimaryButton);
+        rightController.TryGetFeatureValue(CommonUsages.grip,out float rightGrip);
+        leftController.TryGetFeatureValue(CommonUsages.grip, out float leftGrip);
         ControllerInputValues.leftStickValue = leftStickValue;
         ControllerInputValues.rightStickValue = rightStickValue;
-        ControllerInputValues.leftTrigger = leftTrigger;
-        ControllerInputValues.rightTrigger = rightTrigger;
+        ControllerInputValues.leftTrigger = leftGrip;
+        ControllerInputValues.rightTrigger = rightGrip;
     }
 
     void InitializeDevice(InputDeviceCharacteristics characteristics, ref InputDevice device)

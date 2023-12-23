@@ -155,9 +155,10 @@ public class SofaMovement : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (playerConfig.GetVelocity() > _deadlyVelocity)
+        if ((playerConfig.GetVelocity() > _deadlyVelocity) && playerConfig.GetAliveStatus())
         {
             playerConfig.SetAliveStatus(false);
+            audio.Play("wallHitDeath");
         }
     }
     void SetMovementSoundPitch()

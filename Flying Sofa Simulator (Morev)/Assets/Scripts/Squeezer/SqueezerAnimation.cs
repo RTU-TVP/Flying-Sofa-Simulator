@@ -17,8 +17,10 @@ public class SqueezerAnimation : MonoBehaviour
     Vector3 squeezedPosition2;
     Vector3 normalPosition1;
     Vector3 normalPosition2;
+    AudioManager audioManager;
     private void Start()
     {
+        audioManager = GetComponent<AudioManager>();
         normalPosition1 = _squeezerPart1.transform.localPosition;
         normalPosition2 = _squeezerPart2.transform.localPosition;
         squeezedPosition1 = new Vector3((_squeezerPart1.transform.localScale.x)/2,0,0);
@@ -44,12 +46,13 @@ public class SqueezerAnimation : MonoBehaviour
         while(true)
         {
             OneSqueeze(squeezeTime);
+            audioManager.Play("squeeze");
             yield return new WaitForSeconds(squeezeTime);
-            // boom sound
+            audioManager.Play("hit");
             yield return new WaitForSeconds(relaxAfterSqueezeTime);
             OneAntiSqueeze(antiSqieezeTime);
+            audioManager.Play("anti");
             yield return new WaitForSeconds(antiSqieezeTime);
-            // piston relax sound
             yield return new WaitForSeconds(relaxBeforeSqueezeTime);
         }
     }
