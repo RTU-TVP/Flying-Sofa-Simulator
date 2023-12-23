@@ -3850,7 +3850,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193548507}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 4cf6cb51cce93c9498f4123b922faa39, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 2efd8fe8799dc8740b63f826f569cf5c, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -24006,7 +24006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &982566835
 Transform:
   m_ObjectHideFlags: 0
@@ -26451,7 +26451,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1093352857
 Transform:
   m_ObjectHideFlags: 0
@@ -26480,7 +26480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioPlayers:
-  - {fileID: 1977960768}
+  - {fileID: 0}
   _sound: voice1
 --- !u!65 &1093352859
 BoxCollider:
@@ -48832,7 +48832,6 @@ GameObject:
   - component: {fileID: 1976997180}
   - component: {fileID: 1976031228}
   - component: {fileID: 1977960767}
-  - component: {fileID: 1977960768}
   m_Layer: 0
   m_Name: HDTV_LOD0
   m_TagString: Untagged
@@ -48862,26 +48861,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: a500127fca10e4f4f9517ee629edd571, type: 3}
---- !u!114 &1977960768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977960766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3753e0cc2fc2e7439a0713768dcc702, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: voice10
-    clip: {fileID: 8300000, guid: 34f0fd1b34e94d3438b9ac77a8d51dd1, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    spatialBlend: 0.8
-    source: {fileID: 0}
 --- !u!1001 &1978912636
 PrefabInstance:
   m_ObjectHideFlags: 0
