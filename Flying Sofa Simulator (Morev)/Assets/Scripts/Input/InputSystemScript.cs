@@ -10,36 +10,28 @@ public class InputSystemScript : MonoBehaviour
     UnityEngine.XR.InputDevice leftController;
 
     Gamepad currentGamePad;
-    UnityEvent GamepadEvent;
+    bool isGamepadInitialized = false;
 
     [SerializeField] InputType inputType;
-    private void Start()
+    private void Update()
     {
         if(inputType == InputType.gamepad)
         {
-            GamepadEvent.RemoveAllListeners();
-            GamepadEvent.AddListener(InitializeGamepad);
-            GamepadEvent.AddListener(GamepadInput);
+            if (isGamepadInitialized) GamepadInput();
+            else InitializeGamepad();
         }
-    }
-    private void Update()
-    {
-        if(inputType == InputType.gamepad) UpdateInputForGamepad();
         else UpdateInputForOculusControllers();
     }
 
     // For Gamepad
-    void UpdateInputForGamepad()
-    {
-        GamepadEvent.Invoke();
-    }
     void InitializeGamepad()
     {
         if (Gamepad.all.Count > 0)
         {
             currentGamePad = Gamepad.all[0];
-            GamepadEvent.RemoveListener(InitializeGamepad);
+            isGamepadInitialized = true;
         }
+        //Debug.Log("Gamepad Initializing");
     }
     void GamepadInput()
     {
@@ -47,6 +39,8 @@ public class InputSystemScript : MonoBehaviour
         ControllerInputValues.rightStickValue = currentGamePad.rightStick.value;
         ControllerInputValues.leftTrigger = currentGamePad.leftShoulder.value;
         ControllerInputValues.rightTrigger = currentGamePad.rightShoulder.value;
+
+        //Debug.Log("Gamepad Working");
     }
 
 

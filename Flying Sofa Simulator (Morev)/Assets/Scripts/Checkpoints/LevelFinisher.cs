@@ -13,10 +13,8 @@ public class LevelFinisher : MonoBehaviour
 
     IEnumerator FinishTimer(float time)
     {
-        yield return new WaitForSeconds(time - 1);
-        GetComponent<PlayerLose>().ScreenFadeIn();
-        yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("MainMenu");
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene("Victory");
         yield break;
     }
 }

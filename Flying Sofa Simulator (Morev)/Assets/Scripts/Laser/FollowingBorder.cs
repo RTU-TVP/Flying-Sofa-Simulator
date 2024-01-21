@@ -12,7 +12,7 @@ public class FollowingBorder : MonoBehaviour
     public void StartMoving()
     {
         StartCoroutine(RotateSpeedUp(10));
-        transform.DOLocalMove(new Vector3(4813, transform.localPosition.y, transform.localPosition.z),time).SetEase(Ease.InCubic);
+        transform.DOLocalMove(new Vector3(1925, transform.localPosition.y, transform.localPosition.z),time).SetEase(Ease.InCubic);
     }
     private void FixedUpdate()
     {
