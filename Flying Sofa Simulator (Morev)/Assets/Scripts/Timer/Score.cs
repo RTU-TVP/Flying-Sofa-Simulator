@@ -18,7 +18,7 @@ public class Score : MonoBehaviour
         }
         else
         {
-            text.text = "Ñ÷¸ò: " + timerConfig.currentStringTimerValue;
+            text.text = "Âðåìÿ: " + timerConfig.currentStringTimerValue;
         }
         if(GameObject.FindObjectOfType<TimerManager>() != null) Destroy(GameObject.FindObjectOfType<TimerManager>().gameObject);
     }
