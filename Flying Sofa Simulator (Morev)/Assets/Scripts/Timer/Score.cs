@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Score : MonoBehaviour
 {
     [SerializeField] TimerConfig timerConfig;
+    [SerializeField] PlayerConfig playerConfig;
     TextMeshProUGUI text;
     private void Start()
     {
@@ -26,8 +27,10 @@ public class Score : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.R))
         {
+            playerConfig.SetNewCheckpoint(0);
+            PlayerPrefs.SetInt("checkpoint",0);
+            timerConfig.EraseData();
             SceneManager.LoadSceneAsync("GameScene");
         }
     }
 }
-

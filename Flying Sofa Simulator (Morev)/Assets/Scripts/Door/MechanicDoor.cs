@@ -31,13 +31,13 @@ public class MechanicDoor : MonoBehaviour
         }
     }
 
-    void Open()
+    public void Open()
     {
         _doorLeft.DOLocalMove(_leftDoorOpenPosition, 1f);
         _doorRight.DOLocalMove(_rightDoorOpenPosition, 1f);
         GetComponent<AudioManager>().Play("open");
     }
-    void Close()
+    public void Close()
     {
         _doorLeft.DOLocalMove(_leftDoorStartPosition, 1f);
         _doorRight.DOLocalMove(_rightDoorStartPosition, 1f);

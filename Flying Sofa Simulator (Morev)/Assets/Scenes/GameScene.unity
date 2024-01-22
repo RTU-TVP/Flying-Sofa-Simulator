@@ -1002,8 +1002,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4, y: 0.67753196}
-  m_SizeDelta: {x: 8, y: -57.91388}
+  m_AnchoredPosition: {x: -29.719997, y: 0.5}
+  m_SizeDelta: {x: 15.560005, y: -58.999996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &62026103
 MonoBehaviour:
@@ -2334,7 +2334,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 159247099157665923, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1054042456224937162, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -2383,6 +2383,10 @@ PrefabInstance:
     - target: {fileID: 6464166875999744952, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
       propertyPath: m_Name
       value: Sofa (Player Object)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6589711784548004177, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
+      propertyPath: _deadlyVelocity
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8767287813196946137, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
       propertyPath: sounds.Array.size
@@ -4692,6 +4696,7 @@ MonoBehaviour:
   - trigger: {fileID: 2021238675}
     location: {fileID: 943519744}
   _playerConfig: {fileID: 11400000, guid: ef9c497222baa4149a574a05686ffa40, type: 2}
+  _timerConfig: {fileID: 11400000, guid: 4e1a72d22ce858b419be60b11d99d0a6, type: 2}
 --- !u!4 &221723680
 Transform:
   m_ObjectHideFlags: 0
@@ -26489,7 +26494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 421aed5f1d5af244e98befe72a501db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputType: 1
+  inputType: 0
 --- !u!4 &1082456092
 Transform:
   m_ObjectHideFlags: 0
@@ -30065,7 +30070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1432a01f1d459d4ba15f33f56ed1c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 25
+  time: 40
   testStart: 0
 --- !u!1001 &1227533754
 PrefabInstance:
@@ -32443,8 +32448,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4, y: 0.67753196}
-  m_SizeDelta: {x: -8, y: -57.91388}
+  m_AnchoredPosition: {x: 30.280003, y: 0.5}
+  m_SizeDelta: {x: -104.439995, y: -58.999996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1316019392
 MonoBehaviour:
@@ -34021,7 +34026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1363073277
 Transform:
   m_ObjectHideFlags: 0

@@ -468,7 +468,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138647763}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5b798dc76a122b439ae3cb11709f031, type: 3}
   m_Name: 
@@ -863,6 +863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerConfig: {fileID: 11400000, guid: 4e1a72d22ce858b419be60b11d99d0a6, type: 2}
+  playerConfig: {fileID: 11400000, guid: ef9c497222baa4149a574a05686ffa40, type: 2}
 --- !u!114 &113492250406051263
 MonoBehaviour:
   m_ObjectHideFlags: 0

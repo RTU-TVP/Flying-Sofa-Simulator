@@ -67,8 +67,4 @@ public class TimerManager : MonoBehaviour
     {
         return totalSeconds;
     }
-    private void Update()
-    {
-        Debug.Log(timerConfig.timerColorMode);
-    }
 }

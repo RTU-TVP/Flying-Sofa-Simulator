@@ -10,6 +10,7 @@ public class DoorCloser : MonoBehaviour
         if(other.CompareTag("sofa"))
         {
             _actualDoor.GetComponent<MechanicDoor>().OffDoorTrigger();
+            _actualDoor.GetComponent<MechanicDoor>().Close();
             Destroy(gameObject);
         }
     }

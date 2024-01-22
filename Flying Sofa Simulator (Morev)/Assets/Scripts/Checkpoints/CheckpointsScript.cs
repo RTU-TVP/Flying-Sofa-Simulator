@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CheckpointsScript : MonoBehaviour
 {
     [SerializeField] List<CheckpointLocationPair> _checkpoints;
     [SerializeField] PlayerConfig _playerConfig;
+    [SerializeField] TimerConfig _timerConfig;
     GameObject player;
     private void Awake()
     {
@@ -48,6 +51,18 @@ public class CheckpointsScript : MonoBehaviour
             {
                 _checkpoints[i].location.SetActive(true);
             }
+        }
+    }
+
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            _timerConfig.EraseData();
+            _playerConfig.SetNewCheckpoint(0);
+            PlayerPrefs.SetInt("checkpoint",0);
+            SceneManager.LoadScene("Victory");
         }
     }
 }
