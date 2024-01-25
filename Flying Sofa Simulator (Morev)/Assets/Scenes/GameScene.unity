@@ -50823,6 +50823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9e06642cdd125428e63f3fc192fe11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerConfig: {fileID: 11400000, guid: 4e1a72d22ce858b419be60b11d99d0a6, type: 2}
 --- !u!114 &2021238680
 MonoBehaviour:
   m_ObjectHideFlags: 0

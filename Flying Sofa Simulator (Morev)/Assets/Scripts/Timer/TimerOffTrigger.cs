@@ -12,6 +12,7 @@ public class TimerOffTrigger : MonoBehaviour
             foreach(Timer timer in GameObject.FindObjectsOfType<Timer>())
             {
                 timer.gameObject.GetComponent<TextMeshProUGUI>().enabled = false;
+
             }
         }
     }
