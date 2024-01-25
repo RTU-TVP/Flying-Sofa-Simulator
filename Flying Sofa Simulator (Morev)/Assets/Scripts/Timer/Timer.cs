@@ -34,6 +34,10 @@ public class Timer : MonoBehaviour
             i++;
             timerConfig.timerColorMode = i;
         }
+        if (!timerConfig.isTimerWorking)
+        {
+            timerText.enabled = false;
+        }
     }
 }
 [Serializable]
