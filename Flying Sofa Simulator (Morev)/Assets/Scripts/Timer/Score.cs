@@ -8,7 +8,9 @@ public class Score : MonoBehaviour
 {
     [SerializeField] TimerConfig timerConfig;
     [SerializeField] PlayerConfig playerConfig;
+    [SerializeField] TextMeshProUGUI loading;
     TextMeshProUGUI text;
+    bool r_pressed = false;
     private void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
@@ -25,8 +27,10 @@ public class Score : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKeyDown(KeyCode.R) && (!r_pressed))
         {
+            loading.text = "Загрузка";
+            r_pressed = true;
             playerConfig.SetNewCheckpoint(0);
             PlayerPrefs.SetInt("checkpoint",0);
             timerConfig.EraseData();
