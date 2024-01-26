@@ -2253,6 +2253,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2721234732119493755, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
+      propertyPath: m_RequestedTrackingOriginMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4315246890649268166, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.12
@@ -2275,11 +2279,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6840071466107504823, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.298
+      value: -0.33
       objectReference: {fileID: 0}
     - target: {fileID: 6840071466107504823, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.3
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 8202042898174262238, guid: 5f0797ca8faf2604285e88ebdb072696, type: 3}
       propertyPath: m_Interpolate
@@ -39054,8 +39058,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.30000305, y: 0.04499817}
-  m_SizeDelta: {x: 0.59999603, y: 0.08000243}
+  m_AnchoredPosition: {x: -0.33499908, y: 0.04499817}
+  m_SizeDelta: {x: 0.66999495, y: 0.08000243}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1529386434
 PrefabInstance:
@@ -46337,8 +46341,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.30499268, y: 0.04499817}
-  m_SizeDelta: {x: -0.6100205, y: 0.08000243}
+  m_AnchoredPosition: {x: 0.33499122, y: 0.04499817}
+  m_SizeDelta: {x: -0.6700176, y: 0.08000243}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1824293471
 MonoBehaviour:
