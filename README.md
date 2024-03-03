@@ -33,3 +33,6 @@
 ## Скриншоты
 
 ## Геймплей
+![Геймплей](resources/screenshots/screenshot1.jpg)
+![Геймплей](resources/screenshots/screenshot2.jpg)
+![Геймплей](resources/screenshots/screenshot3.jpg)
