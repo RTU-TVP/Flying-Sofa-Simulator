@@ -1,3 +1,5 @@
+#if UNITY_EDITOR_WIN || !UNITY_ANDROID
+
 #region
 
 using ChairControl.ChairWork;
@@ -35,3 +37,5 @@ public class FutuRiftControllerManager : MonoBehaviour
         _futuRiftController.Stop();
     }
 }
+
+#endif
