@@ -1,0 +1,11 @@
+﻿# Файлы, игнорируемые по умолчанию
+/shelf/
+/workspace.xml
+# Игнорируемые файлы Rider
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.Flying Sofa Simulator (Morev).iml
+/modules.xml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
