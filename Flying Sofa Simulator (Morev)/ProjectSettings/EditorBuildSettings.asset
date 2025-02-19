@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/MainMenu.unity
-    guid: 0cdb1e4029b54c14a8d1d27821893d47
+  - enabled: 1
+    path: Assets/Scenes/Bootstrap.unity
+    guid: 17eee08d70be3a844b151677779332c0
   - enabled: 1
     path: Assets/Scenes/Victory.unity
     guid: a90051f4db0190f439443485fef015cd
+  - enabled: 1
+    path: Assets/Splash Images - TVP/Intro/Scenes/Intro Scene - Image UI.unity
+    guid: 486795c880bc9a147b66cb4a0e6769f8
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: c41f06db759c6e3479580e13b160778a
