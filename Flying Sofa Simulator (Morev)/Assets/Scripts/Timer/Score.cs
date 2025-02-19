@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
@@ -11,30 +12,47 @@ public class Score : MonoBehaviour
     [SerializeField] TextMeshProUGUI loading;
     TextMeshProUGUI text;
     bool r_pressed = false;
+
+    [SerializeField] private Button startButton;
+
+    private AsyncOperation loadSceneAsync;
+
     private void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
-        if(timerConfig.currentStringTimerValue == "")
+        if (timerConfig.currentStringTimerValue == "")
         {
-            text.text = "Симулятор летающего дивана";
+            text.text = "Р‘СЂРѕСЃСЊ РІС‹Р·РѕРІ Р»РѕРіРёРєРµ!";
         }
         else
         {
-            text.text = "Время: " + timerConfig.currentStringTimerValue;
+            text.text = "пїЅпїЅпїЅпїЅпїЅ: " + timerConfig.currentStringTimerValue;
         }
-        if(GameObject.FindObjectOfType<TimerManager>() != null) Destroy(GameObject.FindObjectOfType<TimerManager>().gameObject);
+
+        if (GameObject.FindObjectOfType<TimerManager>() != null)
+            Destroy(GameObject.FindObjectOfType<TimerManager>().gameObject);
+
+        loadSceneAsync = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        loadSceneAsync.allowSceneActivation = false;
+
+        startButton.onClick.AddListener(LaunchGame);
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R) && (!r_pressed))
+        if (Input.GetKeyDown(KeyCode.R) && (!r_pressed))
         {
-            loading.text = "Загрузка";
-            r_pressed = true;
-            playerConfig.SetNewCheckpoint(0);
-            PlayerPrefs.SetInt("checkpoint",0);
-            timerConfig.EraseData();
-            SceneManager.LoadSceneAsync("GameScene");
+            LaunchGame();
         }
+    }
+
+    private void LaunchGame()
+    {
+        loading.text = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
+        r_pressed = true;
+        playerConfig.SetNewCheckpoint(0);
+        PlayerPrefs.SetInt("checkpoint", 0);
+        timerConfig.EraseData();
+        loadSceneAsync.allowSceneActivation = true;
     }
 }

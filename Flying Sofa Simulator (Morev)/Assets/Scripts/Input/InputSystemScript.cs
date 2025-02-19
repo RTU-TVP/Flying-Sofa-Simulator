@@ -3,49 +3,98 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using UnityEngine.XR;
+
 public class InputSystemScript : MonoBehaviour
 {
-    UnityEngine.XR.InputDevice rightController;
-    UnityEngine.XR.InputDevice leftController;
+    [SerializeField] private Button gamepadButton, oculusButton;
 
-    Gamepad currentGamePad;
-    bool isGamepadInitialized = false;
+    private UnityEngine.XR.InputDevice rightController;
+    private UnityEngine.XR.InputDevice leftController;
 
-    [SerializeField] InputType inputType;
+    private Gamepad currentGamePad;
+    private bool isGamepadInitialized = false;
+
+    [SerializeField] private InputType inputType = InputType.oculusControllers;
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("InputType"))
+        {
+            inputType = (InputType)PlayerPrefs.GetInt("InputType");
+        }
+
+        if (gamepadButton)
+            gamepadButton.onClick.AddListener(() =>
+            {
+                gamepadButton.GetComponent<Image>().color = Color.green;
+                oculusButton.GetComponent<Image>().color = Color.white;
+                SetInput(InputType.gamepad);
+            });
+
+        if (oculusButton)
+            oculusButton.onClick.AddListener(() =>
+            {
+                gamepadButton.GetComponent<Image>().color = Color.white;
+                oculusButton.GetComponent<Image>().color = Color.green;
+                SetInput(InputType.oculusControllers);
+            });
+
+        switch (inputType)
+        {
+            case InputType.gamepad when gamepadButton:
+                gamepadButton.GetComponent<Image>().color = Color.green;
+                break;
+            case InputType.oculusControllers when oculusButton:
+                oculusButton.GetComponent<Image>().color = Color.green;
+                break;
+        }
+
+        void SetInput(InputType inputType)
+        {
+            this.inputType = inputType;
+            PlayerPrefs.SetInt("InputType", (int)inputType);
+        }
+    }
+
     private void Update()
     {
-        if(inputType == InputType.gamepad)
+        switch (inputType)
         {
-            if (isGamepadInitialized) GamepadInput();
-            else InitializeGamepad();
+            case InputType.gamepad when isGamepadInitialized:
+                GamepadInput();
+                break;
+            case InputType.gamepad:
+                InitializeGamepad();
+                break;
+            case InputType.oculusControllers:
+                UpdateInputForOculusControllers();
+                break;
         }
-        else UpdateInputForOculusControllers();
     }
 
     // For Gamepad
-    void InitializeGamepad()
+    private void InitializeGamepad()
     {
         if (Gamepad.all.Count > 0)
         {
             currentGamePad = Gamepad.all[0];
             isGamepadInitialized = true;
         }
-        //Debug.Log("Gamepad Initializing");
     }
-    void GamepadInput()
+
+    private void GamepadInput()
     {
         ControllerInputValues.leftStickValue = currentGamePad.leftStick.value;
         ControllerInputValues.rightStickValue = currentGamePad.rightStick.value;
         ControllerInputValues.leftTrigger = currentGamePad.leftShoulder.value;
         ControllerInputValues.rightTrigger = currentGamePad.rightShoulder.value;
-
-        //Debug.Log("Gamepad Working");
     }
 
 
     // For Oculus Controllers
-    void UpdateInputForOculusControllers()
+    private void UpdateInputForOculusControllers()
     {
         InitializeDevices();
         leftController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primary2DAxis, out Vector2 leftStickValue);
@@ -59,22 +108,33 @@ public class InputSystemScript : MonoBehaviour
         ControllerInputValues.leftTrigger = leftGrip;
         ControllerInputValues.rightTrigger = rightGrip;
     }
-    void InitializeDevice(InputDeviceCharacteristics characteristics, ref UnityEngine.XR.InputDevice device)
+
+    private void InitializeDevice(InputDeviceCharacteristics characteristics, ref UnityEngine.XR.InputDevice device)
     {
         List<UnityEngine.XR.InputDevice> devices = new List<UnityEngine.XR.InputDevice>();
         InputDevices.GetDevicesWithCharacteristics(characteristics, devices);
-        if(devices.Count > 0) { device = devices[0]; }
+        if (devices.Count > 0)
+        {
+            device = devices[0];
+        }
     }
-    void InitializeDevices()
+
+    private void InitializeDevices()
     {
         if (!rightController.isValid)
         {
             InitializeDevice(InputDeviceCharacteristics.Right, ref rightController);
         }
+
         if (!leftController.isValid)
         {
             InitializeDevice(InputDeviceCharacteristics.Left, ref leftController);
         }
     }
-    enum InputType {oculusControllers, gamepad}
+
+    private enum InputType
+    {
+        oculusControllers,
+        gamepad
+    }
 }
