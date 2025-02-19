@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,13 +6,15 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    [SerializeField] TimerConfig timerConfig;
-    [SerializeField] PlayerConfig playerConfig;
-    [SerializeField] TextMeshProUGUI loading;
-    TextMeshProUGUI text;
-    bool r_pressed = false;
+    [SerializeField] private TimerConfig timerConfig;
+    [SerializeField] private PlayerConfig playerConfig;
+    [SerializeField] private TextMeshProUGUI loading;
+    
+    private TextMeshProUGUI text;
+    private bool r_pressed = false;
 
     [SerializeField] private Button startButton;
+    [SerializeField] private Button stopButton;
 
     private AsyncOperation loadSceneAsync;
 
@@ -36,11 +37,14 @@ public class Score : MonoBehaviour
         loadSceneAsync.allowSceneActivation = false;
 
         startButton.onClick.AddListener(LaunchGame);
+        stopButton.onClick.AddListener(StopDelay);
+        
+        StartCoroutine(DelayedStart());
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && (!r_pressed))
+        if (Input.GetKeyDown(KeyCode.R)) 
         {
             LaunchGame();
         }
@@ -48,11 +52,41 @@ public class Score : MonoBehaviour
 
     private void LaunchGame()
     {
-        loading.text = "��������";
+        if (r_pressed)
+        {
+            return;
+        }
+        
         r_pressed = true;
+        
+        startButton.onClick.RemoveListener(LaunchGame);
+
+        loading.text = "��������";
         playerConfig.SetNewCheckpoint(0);
         PlayerPrefs.SetInt("checkpoint", 0);
         timerConfig.EraseData();
         loadSceneAsync.allowSceneActivation = true;
+    }
+    
+    private void StopDelay()
+    {
+        StopAllCoroutines();
+        loading.text = "";
+    }
+    
+    private IEnumerator DelayedStart()
+    {
+        loading.text = $"5";
+        yield return new WaitForSeconds(1);
+        loading.text = $"4";
+        yield return new WaitForSeconds(1);
+        loading.text = $"3";
+        yield return new WaitForSeconds(1);
+        loading.text = $"2";
+        yield return new WaitForSeconds(1);
+        loading.text = $"1";
+        yield return new WaitForSeconds(1);
+        
+        LaunchGame();
     }
 }

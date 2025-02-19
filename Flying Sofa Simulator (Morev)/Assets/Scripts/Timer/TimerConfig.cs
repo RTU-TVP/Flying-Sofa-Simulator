@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "TimerConfig", menuName = "ScriptableObjects/TimerConfig", order = 2)]
